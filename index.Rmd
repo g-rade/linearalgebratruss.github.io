@@ -1,4 +1,4 @@
 ---
-title: "index.Rmd"
-output: html_document
+title: "Solving Truss Bridge Force Balances with Linear Algebra"
+output: prettydoc::html_pretty
 ---
