@@ -15,7 +15,7 @@ Trusses are a special type of frame that exclusively consists of members connect
 
 A truss bridge is a bridge made up of these truss frames, typically either wood or metal.  Truss bridges are especially stable because the truss frames are triangular, which cannot be distorted by stress.  We will be focusing on the Waddell A Truss bridge, which was designed and patented by J.A.L. Waddell in 1894.  This truss bridge is unique because it is specifically for short spans and takes the shape of an A frame.  
 
-[Waddel Truss]
+![](images/Waddell-bridge.jpeg)
 
 ### The Waddell Truss
 
