@@ -7,11 +7,11 @@ output: prettydoc::html_pretty
 
 A type of structure commonly used in engineering is a frame, which is a supporting structure with multiple beams. The sides are called members, which are connected to each other by  pins. A pin is a specific type of connector that allows the members it attaches to spin around but keeps the end touching the pin from moving vertically or horizontally. 
 
-[image]
+![](images/image1.png)
 
 Trusses are a special type of frame that exclusively consists of members connected with pin supports with only two forces acting on each individual member (commonly called two-force members). They are an excellent option for distributing forces and making a structure more stable. Trusses are very commonly used in construction and civil engineering, but most people know about them from truss bridges. 
 
-[image]
+![](images/image2.png)
 
 A truss bridge is a bridge made up of these truss frames, typically either wood or metal.  Truss bridges are especially stable because the truss frames are triangular, which cannot be distorted by stress.  We will be focusing on the Waddell A Truss bridge, which was designed and patented by J.A.L. Waddell in 1894.  This truss bridge is unique because it is specifically for short spans and takes the shape of an A frame.  
 
@@ -28,7 +28,7 @@ The Waddell A truss bridge design was popular for a short time in the early 20th
 
 In structural engineering, the function of a truss is to hold up a load, which exerts a force on the truss. A load can be any force applied to the truss, such as a car going over a bridge or a porch swing hanging from the rafters above a porch. You can think of forces as vector quantities, which have a magnitude (length) and direction which can be defined in terms of positive and negative quantities of x and y. At its simplest, the force of a load is just its weight and acts only in the negative y, or downward, direction. 
 
-[image]
+![](images/image3.png)
 
 Traditionally, pins are noted by capital letters and members are named by the two pins at the ends. For example, the vertical member in the middle is GC because it has pin G at the top and pin C at the bottom. Additionally, it is very common to simplify trusses into two dimensions, x and y. Like in the Euclidean plane, the positive y direction is up and the positive x direction is to the right. For example, a person standing above pin C on the bridge might exert a ~ 600 N force in the y direction. Similarly, a bunch of helium balloons at the same point might exert a force of + 2 N in the y direction. 
 
@@ -38,7 +38,7 @@ Using force balances, if we know the force acting on the truss we can figure out
 
 The way the members of a truss react to an applied load is best explained by something like the figure below. Imagine you have a straw held at an angle, and you pull one end left and the other right. The straw will turn until it’s parallel to the directions you’re pulling it.
 
-[straw diagram]
+![](images/image4.png)
 
 
 The same concept applies to the members of a truss. Each member is either in compression (being squished) or tension (being pulled). Since the net force must be zero, each member has to be pulled or pushed amount and opposite directions from both ends. 
@@ -50,13 +50,13 @@ Say we want to know the force acting on all members of the truss when there is a
 
 Our first step is to make sure the forces on the whole truss are balanced. For our bridge to not sink into the ground when a person is standing on it, the ground has to push up as much as the person’s weight pushes down. Given that each end of the truss bridge is resting on the ground for support and the person is standing in the middle, the upward force acting each of the supports is half of our assigned load.
 
-[force diagram]
+![](images/image5.png)
 
 The distribution of a force throughout the truss can be modeled by the force acting on the pins. We make an “assumption” that all members are in either tension or compression, making each pin either have all forces pulling or all forces pushing on it. If a member we assumed was in tension when it was actually in compression, the force it exerts on the pins will come out negative. 
 
 One way we simplified our diagram is to assume that all members of the truss are in tension. If member CG, for example, is in tension, then it will be effectively “pulling” pins C and G towards each other. As a result, we draw all member forces pulling away from the pins. The applied force and support forces we draw in the directions we know they are pulling, so the load points straight down and the support forces point straight up. 
 
-[image]
+![](images/image6.png)
 
 Notice how in member CH, pin C and pin H both have Force CH pulling on them.   
 To find the force on each pin, we break it down into the total force in both the x and y directions. Think of this like breaking down each force into multiples of the basis vectors e1 and e2. The total force on each pin, in each direction, must equal to zero. 
