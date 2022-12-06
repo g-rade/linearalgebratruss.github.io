@@ -2,3 +2,92 @@
 title: "Solving Truss Bridge Force Balances with Linear Algebra"
 output: prettydoc::html_pretty
 ---
+
+## What Are Trusses?
+
+A type of structure commonly used in engineering is a frame, which is a supporting structure with multiple beams. The sides are called members, which are connected to each other by  pins. A pin is a specific type of connector that allows the members it attaches to spin around but keeps the end touching the pin from moving vertically or horizontally. 
+
+[image]
+
+Trusses are a special type of frame that exclusively consists of members connected with pin supports with only two forces acting on each individual member (commonly called two-force members). They are an excellent option for distributing forces and making a structure more stable. Trusses are very commonly used in construction and civil engineering, but most people know about them from truss bridges. 
+
+[image]
+
+A truss bridge is a bridge made up of these truss frames, typically either wood or metal.  Truss bridges are especially stable because the truss frames are triangular, which cannot be distorted by stress.  We will be focusing on the Waddell A Truss bridge, which was designed and patented by J.A.L. Waddell in 1894.  This truss bridge is unique because it is specifically for short spans and takes the shape of an A frame.  
+
+[Waddel Truss]
+
+### The Waddell Truss
+
+Waddell conceived this bridge design while he was serving as a visiting professor at Tokyo University in 1880.  During his time there, he observed the primarily British-engineered short-span railway bridges, and felt he could improve their design.  He criticized the use of pony trusses, which are trusses that only span the sides of the bridge and do not connect overhead.  These types of trusses are vulnerable to winds and heavy loads.  Inspired by A-frame roofs, Waddell designed the A-frame truss bridge, which he claimed superior due to having “great rigidity in all directions, ease and cheapness of erection, and economy of metal when it is compared with structures of other types having equal strength and rigidity”.  He also commented that “Its appearance is odd but not displeasing”.
+
+The Waddell A truss bridge design was popular for a short time in the early 20th century United States, but quickly fell out of fashion as the Pratt truss bridge design quickly became the norm, as it can span much greater distances.  Currently, there are only two surviving Waddell A truss bridges, one in Parkville, Missouri and one in Shreveport, Louisiana.  Both of these were relocated from their original build sites to these locations. 
+
+
+### Trusses and Force Balance
+
+In structural engineering, the function of a truss is to hold up a load, which exerts a force on the truss. A load can be any force applied to the truss, such as a car going over a bridge or a porch swing hanging from the rafters above a porch. You can think of forces as vector quantities, which have a magnitude (length) and direction which can be defined in terms of positive and negative quantities of x and y. At its simplest, the force of a load is just its weight and acts only in the negative y, or downward, direction. 
+
+[image]
+
+Traditionally, pins are noted by capital letters and members are named by the two pins at the ends. For example, the vertical member in the middle is GC because it has pin G at the top and pin C at the bottom. Additionally, it is very common to simplify trusses into two dimensions, x and y. Like in the Euclidean plane, the positive y direction is up and the positive x direction is to the right. For example, a person standing above pin C on the bridge might exert a ~ 600 N force in the y direction. Similarly, a bunch of helium balloons at the same point might exert a force of + 2 N in the y direction. 
+
+Since trusses are designed to hold up large loads on bridges or roofs, we don’t want them to move. Mathematically, that means all the forces acting on each member and pin need to balance each other out so that the net force on any member or pin is zero. This concept, called force balance, is  pretty intuitive when broken down. For example, say you and your friend are pushing the same table in opposite directions. If you are pushing as hard on the table as your friend is, the table will not move, but if you push harder than them, the table will move towards them. Here, we will be representing forces as vectors in which the magnitude is the force and the direction is the direction in which the force is acting. 
+
+Using force balances, if we know the force acting on the truss we can figure out how much of that force is acting on each part of the truss.
+
+The way the members of a truss react to an applied load is best explained by something like the figure below. Imagine you have a straw held at an angle, and you pull one end left and the other right. The straw will turn until it’s parallel to the directions you’re pulling it.
+
+[straw diagram]
+
+
+The same concept applies to the members of a truss. Each member is either in compression (being squished) or tension (being pulled). Since the net force must be zero, each member has to be pulled or pushed amount and opposite directions from both ends. 
+
+
+## How To Solve a Force Balance
+
+Say we want to know the force acting on all members of the truss when there is a person standing on pin C exerting a force of 600 N in the negative y direction. We can set up equations for pins and members until we have as many equations as we have unknown variables – that is what we need in order for it to be mathematically solvable. 
+
+Our first step is to make sure the forces on the whole truss are balanced. For our bridge to not sink into the ground when a person is standing on it, the ground has to push up as much as the person’s weight pushes down. Given that each end of the truss bridge is resting on the ground for support and the person is standing in the middle, the upward force acting each of the supports is half of our assigned load.
+
+[force diagram]
+
+The distribution of a force throughout the truss can be modeled by the force acting on the pins. We make an “assumption” that all members are in either tension or compression, making each pin either have all forces pulling or all forces pushing on it. If a member we assumed was in tension when it was actually in compression, the force it exerts on the pins will come out negative. 
+
+One way we simplified our diagram is to assume that all members of the truss are in tension. If member CG, for example, is in tension, then it will be effectively “pulling” pins C and G towards each other. As a result, we draw all member forces pulling away from the pins. The applied force and support forces we draw in the directions we know they are pulling, so the load points straight down and the support forces point straight up. 
+
+[image]
+
+Notice how in member CH, pin C and pin H both have Force CH pulling on them.   
+To find the force on each pin, we break it down into the total force in both the x and y directions. Think of this like breaking down each force into multiples of the basis vectors e1 and e2. The total force on each pin, in each direction, must equal to zero. 
+
+For example, the force of member AH pulls pin A both up and to the right, creating the force FAH. We call the upward part of the force the y-component and the rightward part of the force the x-component. We can use the geometry of the truss to help us find the exact amount of FAH acting along each direction. 
+
+[equation]
+
+To solve for each specific force on a pin, you can set up a system of linear equations.
+
+[equations]
+
+We repeat this process for every pin, which will result in two linear equations for each pin in the truss. The load and support forces, which are known, are the outputs of the linear equations for the pins on which they are acting. All other equations will equal zero. While we could solve them all by hand, that is a very time-consuming process. It is much easier to solve them using linear algebra. 
+
+We can put all the force balance equations for the pin supports into an augmented matrix. 
+
+[matrix]
+
+The columns of the matrix correspond to each member of the truss and the rows alternate between the x and y directions. Additionally, each column in the augmented matrix should sum to zero. We can simplify the matrix by using software to put it in row-reduced echelon form. 
+
+[matrix]
+
+Each column contains all zeros except for exactly one 1 along the main diagonal, called the pivot. The value on the right hand side of the pivot row is the value of the force. For example, FAB is the first column, which has a pivot in the first row. The value on the right hand side of the first row is 300. That is, $F_AB = 300$, so member AB is experiencing 300 N of tension. Similarly, $F_AH = -424$, meaning that member AH is experiencing 424 N of compression. The forces which are equal to 0, such as FDF, are what we call zero-force members. They don’t have any forces acting on them when the load is placed at point C. 
+
+Notice how the bottom 3 rows of the RREF matrix are empty. That is because we had more equations than variables. We could have used 3 fewer equations and still gotten values for every force! 
+
+
+#### Sources
+
+1  Jackson, Donald C. "Waddell 'A' Truss Bridge" (PDF). Historic American Engineering Record. Washington, D.C.: Library of Congress. p. 1. Accessed November 30, 2022.
+https://tile.loc.gov/storage-services/master/pnp/habshaer/mo/mo0100/mo0162/data/mo0162data.pdf 
+
+ 2         Powers, Mathew and Clio Admin. "Waddell "A" Truss Bridge in Parkville, Missouri." Clio: Your Guide to History. April 28, 2022.  Accessed November 30, 2022. https://theclio.com/entry/149629
+
