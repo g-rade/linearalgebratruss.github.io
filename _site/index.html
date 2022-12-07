@@ -10,6 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<meta name="author" content="Helena Grilliot, Annie Portoghese, Grace Rade, Lydia Summermatter" />
 
 
 <title>Solving Truss Bridge Force Balances with Linear Algebra</title>
@@ -36,6 +37,8 @@
 <section class="page-header">
 <h1 class="title toc-ignore project-name">Solving Truss Bridge Force
 Balances with Linear Algebra</h1>
+<h4 class="author project-author">Helena Grilliot, Annie Portoghese,
+Grace Rade, Lydia Summermatter</h4>
 </section>
 
 
@@ -49,14 +52,26 @@ members, which are connected to each other by pins. A pin is a specific
 type of connector that allows the members it attaches to spin around but
 keeps the end touching the pin from moving vertically or
 horizontally.</p>
-<p><img src="images/image1.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image1.png" style="width:50.0%" alt="" />
+<p class="caption">Movement of Pins</p>
+</div>
+</center>
 <p>Trusses are a special type of frame that exclusively consists of
 members connected with pin supports with only two forces acting on each
 individual member (commonly called two-force members). They are an
 excellent option for distributing forces and making a structure more
 stable. Trusses are very commonly used in construction and civil
 engineering, but most people know about them from truss bridges.</p>
-<p><img src="images/image2.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image2.png" style="width:80.0%" alt="" />
+<p class="caption">Truss framess wull have a pin at the vertex between
+two or more members, while non-truss frames may have a pin connector in
+the middle of a member</p>
+</div>
+</center>
 <p>A truss bridge is a bridge made up of these truss frames, typically
 either wood or metal. Truss bridges are especially stable because the
 truss frames are triangular, which cannot be distorted by stress. We
@@ -64,7 +79,6 @@ will be focusing on the Waddell A Truss bridge, which was designed and
 patented by J.A.L. Waddell in 1894. This truss bridge is unique because
 it is specifically for short spans and takes the shape of an A
 frame.</p>
-<p>[Waddel Truss]</p>
 <div id="the-waddell-truss" class="section level3">
 <h3>The Waddell Truss</h3>
 <p>Waddell conceived this bridge design while he was serving as a
@@ -86,6 +100,12 @@ greater distances. Currently, there are only two surviving Waddell A
 truss bridges, one in Parkville, Missouri and one in Shreveport,
 Louisiana. Both of these were relocated from their original build sites
 to these locations.</p>
+<center>
+<div class="figure">
+<img src="images/Waddell-bridge.jpeg" alt="" />
+<p class="caption">Waddell A Truss Bridge in Parkville, Missouri</p>
+</div>
+</center>
 </div>
 <div id="trusses-and-force-balance" class="section level3">
 <h3>Trusses and Force Balance</h3>
@@ -97,7 +117,12 @@ quantities, which have a magnitude (length) and direction which can be
 defined in terms of positive and negative quantities of x and y. At its
 simplest, the force of a load is just its weight and acts only in the
 negative y, or downward, direction.</p>
-<p><img src="images/image3.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image3.png" style="width:50.0%" alt="" />
+<p class="caption">Waddell A Truss labeled with pins</p>
+</div>
+</center>
 <p>Traditionally, pins are noted by capital letters and members are
 named by the two pins at the ends. For example, the vertical member in
 the middle is GC because it has pin G at the top and pin C at the
@@ -126,7 +151,12 @@ explained by something like the figure below. Imagine you have a straw
 held at an angle, and you pull one end left and the other right. The
 straw will turn until it’s parallel to the directions you’re pulling
 it.</p>
-<p><img src="images/image4.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image4.png" style="width:70.0%" alt="" />
+<p class="caption">Load applied to a straw</p>
+</div>
+</center>
 <p>The same concept applies to the members of a truss. Each member is
 either in compression (being squished) or tension (being pulled). Since
 the net force must be zero, each member has to be pulled or pushed
@@ -146,7 +176,12 @@ standing on it, the ground has to push up as much as the person’s weight
 pushes down. Given that each end of the truss bridge is resting on the
 ground for support and the person is standing in the middle, the upward
 force acting each of the supports is half of our assigned load.</p>
-<p><img src="images/image5.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image5.png" style="width:50.0%" alt="" />
+<p class="caption">Load and support on the Waddell A Truss</p>
+</div>
+</center>
 <p>The distribution of a force throughout the truss can be modeled by
 the force acting on the pins. We make an “assumption” that all members
 are in either tension or compression, making each pin either have all
@@ -160,7 +195,12 @@ result, we draw all member forces pulling away from the pins. The
 applied force and support forces we draw in the directions we know they
 are pulling, so the load points straight down and the support forces
 point straight up.</p>
-<p><img src="images/image6.png" /></p>
+<center>
+<div class="figure">
+<img src="images/image6.png" style="width:70.0%" alt="" />
+<p class="caption">Complete force diagram of the Waddell A Truss</p>
+</div>
+</center>
 <p>Notice how in member CH, pin C and pin H both have Force CH pulling
 on them.<br />
 To find the force on each pin, we break it down into the total force in
@@ -172,24 +212,148 @@ right, creating the force FAH. We call the upward part of the force the
 y-component and the rightward part of the force the x-component. We can
 use the geometry of the truss to help us find the exact amount of FAH
 acting along each direction.</p>
-<p>[equation]</p>
 <p>To solve for each specific force on a pin, you can set up a system of
 linear equations.</p>
-<p>[equations]</p>
+<p><strong>Pin A:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = F_{AB} + (F_{AH}\cdot
+cos(\theta)) = F_{AB} + (\frac{\sqrt{2}}{2}\cdot F_{AH}) =
+0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = 300 + (F_{AH}\cdot
+sin(\theta)) = (\frac{\sqrt{2}}{2} \cdot F_{AH}) = -300\)</span></p>
 <p>We repeat this process for every pin, which will result in two linear
 equations for each pin in the truss. The load and support forces, which
 are known, are the outputs of the linear equations for the pins on which
 they are acting. All other equations will equal zero. While we could
 solve them all by hand, that is a very time-consuming process. It is
 much easier to solve them using linear algebra.</p>
+<p><strong>Pin B:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = F_{BC} - F_{BH} =
+0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = F_{BH} = 0\)</span></p>
+<p><strong>Pin C:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = F_{CD} +
+(\frac{\sqrt{2}}{2} \cdot F_{CF}) - F_{BC} - (\frac{\sqrt{2}}{2} \cdot
+F_{CH}) = 0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = F_{CG} +
+(\frac{\sqrt{2}}{2} \cdot F_{CF}) = 600\)</span></p>
+<p><strong>Pin D:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = F_{DE} - F_{CD} =
+0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = F_{DF} = 0\)</span></p>
+<p><strong>Pin E:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = - F_{DE} -
+(\frac{\sqrt{2}}{2} \cdot F_{EF}) = 0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = 300 + (\frac{\sqrt{2}}{2}
+\cdot F_{EF}) = (\frac{\sqrt{2}}{2} \cdot F_{EF}) = -300\)</span></p>
+<p><strong>Pin F:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot
+F_{EF}) - (\frac{\sqrt{2}}{2} \cdot F_{FG}) - (\frac{\sqrt{2}}{2} \cdot
+F_{CF}) = 0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = (\frac{\sqrt{2}}{2} \cdot
+F_{FG}) - (\frac{\sqrt{2}}{2} \cdot F_{CF}) - (\frac{\sqrt{2}}{2} \cdot
+F_{EF}) - F_{DF} = 0\)</span></p>
+<p><strong>Pin G:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot
+F_{FG}) - (\frac{\sqrt{2}}{2} \cdot F_{GH}) = 0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = -(\frac{\sqrt{2}}{2} \cdot
+F_{GH}) - (\frac{\sqrt{2}}{2} \cdot F_{FG}) - F_{CG} = 0\)</span></p>
+<p><strong>Pin H:</strong></p>
+<p><span class="math inline">\(\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot
+F_{CH}) + (\frac{\sqrt{2}}{2} \cdot F_{GH}) - (\frac{\sqrt{2}}{2} \cdot
+F_{AH}) = 0\)</span></p>
+<p><span class="math inline">\(\Sigma F_{Y} = (\frac{\sqrt{2}}{2} \cdot
+F_{GH}) - (\frac{\sqrt{2}}{2} \cdot F_{CH}) - (\frac{\sqrt{2}}{2} \cdot
+F_{AH}) - F_{BH} = 0\)</span></p>
 <p>We can put all the force balance equations for the pin supports into
 an augmented matrix.</p>
-<p>[matrix]</p>
+<p><span class="math display">\[A =
+\begin{array}{|ccccccccccccc|c|}
+F_{AB} &amp; F_{AH} &amp; F_{BC} &amp; F_{BH} &amp; F_{CD} &amp; F_{CF}
+&amp; F_{CG} &amp; F_{CH} &amp; F_{DE} &amp; F_{DF} &amp; F_{EF} &amp;
+F_{FG} &amp; F_{GH} \\
+1 &amp; \frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -300 \\
+-1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -\frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+&amp;  \frac{\sqrt{2}}{2}&amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+\frac{\sqrt{2}}{2} &amp; 0 \\
+0 &amp; -\frac{\sqrt{2}}{2} &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0
+&amp;  \frac{\sqrt{2}}{2}&amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+\frac{\sqrt{2}}{2} &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 &amp; -1 &amp; \frac{\sqrt{2}}{2} &amp; 0
+&amp; - \frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; 1 &amp;
+- \frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 600
+\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2}
+&amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{\sqrt{2}}{2} &amp; 0 &amp;
+0 &amp; 0 &amp; -1 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2}
+&amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1
+&amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp;
+0 &amp; -\frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; -\frac{\sqrt{2}}{2} &amp; 0 &amp; 0 &amp; -300\\
+\end{array}
+\]</span></p>
 <p>The columns of the matrix correspond to each member of the truss and
 the rows alternate between the x and y directions. Additionally, each
 column in the augmented matrix should sum to zero. We can simplify the
 matrix by using software to put it in row-reduced echelon form.</p>
-<p>[matrix]</p>
+<p><span class="math display">\[ RREF =
+\begin{array}{|ccccccccccccc|c|}
+F_{AB} &amp; F_{AH} &amp; F_{BC} &amp; F_{BH} &amp; F_{CD} &amp; F_{CF}
+&amp; F_{CG} &amp; F_{CH} &amp; F_{DE} &amp; F_{DF} &amp; F_{EF} &amp;
+F_{FG} &amp; F_{GH} \\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0&amp; 300 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -424 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 300 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 300 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -4.7 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 600 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 300 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -424\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 1 &amp; 0 &amp; -424\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 1 &amp; -424\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+\end{array}
+\]</span></p>
 <p>Each column contains all zeros except for exactly one 1 along the
 main diagonal, called the pivot. The value on the right hand side of the
 pivot row is the value of the force. For example, FAB is the first
