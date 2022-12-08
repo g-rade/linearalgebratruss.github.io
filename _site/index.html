@@ -278,7 +278,7 @@ much easier to solve them using linear algebra.</p>
 (\frac{\sqrt{2}}{2} \cdot \vec{F_{AH}}) = 0\)</span></p>
 <p><span class="math inline">\(\Sigma \vec{F_{Y}} = (\frac{\sqrt{2}}{2}
 \cdot \vec{F_{GH}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{CH}}) -
-(\frac{\sqrt{2}}{2} \cdot vec{F_{AH}}) - \vec{F_{BH}} = 0\)</span></p>
+(\frac{\sqrt{2}}{2} \cdot \vec{F_{AH}}) - \vec{F_{BH}} = 0\)</span></p>
 <p>We can put all the force balance equations for the pin supports into
 an augmented matrix.</p>
 <p><span class="math display">\[A =
@@ -374,15 +374,15 @@ matrix by using software to put it in row-reduced echelon form.</p>
 <p>Each column contains all zeros except for exactly one 1 along the
 main diagonal, called the pivot. The value on the right hand side of the
 pivot row is the value of the force. For example, <span
-class="math inline">\(F_{AB}\)</span> is the first column, which has a
-pivot in the first row. The value on the right hand side of the first
-row is 300. That is, <span class="math inline">\(F_{AB} = 300\)</span>,
-so member AB is experiencing 300 N of tension. Similarly, <span
-class="math inline">\(F_{AH} = -424\)</span>, meaning that member AH is
-experiencing 424 N of compression. The forces which are equal to 0, such
-as <span class="math inline">\(F_{DF}\)</span>, are what we call
-zero-force members. They don’t have any forces acting on them when the
-load is placed at point C.</p>
+class="math inline">\(\vec{F_{AB}}\)</span> is the first column, which
+has a pivot in the first row. The value on the right hand side of the
+first row is 300. That is, <span class="math inline">\(\vec{F_{AB}} =
+300\)</span>, so member AB is experiencing 300 N of tension. Similarly,
+<span class="math inline">\(\vec{F_{AH}} = -424\)</span>, meaning that
+member AH is experiencing 424 N of compression. The forces which are
+equal to 0, such as <span class="math inline">\(\vec{F_{DF}}\)</span>,
+are what we call zero-force members. They don’t have any forces acting
+on them when the load is placed at point C.</p>
 <p>Notice how the bottom 3 rows of the RREF matrix are empty. That is
 because we had more equations than variables. We could have used 3 fewer
 equations and still gotten values for every force!</p>
