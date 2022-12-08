@@ -15,7 +15,7 @@ A type of structure commonly used in engineering is a frame, which is a supporti
 Trusses are a special type of frame that exclusively consists of members connected with pin supports with only two forces acting on each individual member (commonly called two-force members). They are an excellent option for distributing forces and making a structure more stable. Trusses are very commonly used in construction and civil engineering, but most people know about them from truss bridges. 
 
 <center>
-![Truss framess wull have a pin at the vertex between two or more members, while non-truss frames may have a pin connector in the middle of a member](images/image2.png){width=80%}
+![Truss frames will have a pin at the vertex between two or more members, while non-truss frames may have a pin connector in the middle of a member](images/image2.png){width=80%}
 </center>
 
 A truss bridge is a bridge made up of these truss frames, typically either wood or metal. Truss bridges are especially stable because the truss frames are triangular, which cannot be distorted by stress.  We will be focusing on the Waddell A Truss bridge, which was designed and patented by J.A.L. Waddell in 1894.  This truss bridge is unique because it is specifically for short spans and takes the shape of an A frame.  
@@ -23,9 +23,9 @@ A truss bridge is a bridge made up of these truss frames, typically either wood 
 
 ### The Waddell Truss
 
-Waddell conceived this bridge design while he was serving as a visiting professor at Tokyo University in 1880.  During his time there, he observed the primarily British-engineered short-span railway bridges, and felt he could improve their design.  He criticized the use of pony trusses, which are trusses that only span the sides of the bridge and do not connect overhead.  These types of trusses are vulnerable to winds and heavy loads.  Inspired by A-frame roofs, Waddell designed the A-frame truss bridge, which he claimed superior due to having “great rigidity in all directions, ease and cheapness of erection, and economy of metal when it is compared with structures of other types having equal strength and rigidity”.  He also commented that “Its appearance is odd but not displeasing”.
+Waddell conceived this bridge design while he was serving as a visiting professor at Tokyo University in 1880.  During his time there, he observed the many British-engineered short-span railway bridges, and felt he could improve their design.  He criticized the use of pony trusses, which are trusses that only span the sides of the bridge and do not connect overhead.  These types of trusses are vulnerable to winds and heavy loads.  Inspired by A-frame roofs, Waddell designed the A-frame truss bridge, which he claimed superior due to them having “great rigidity in all directions, ease and cheapness of erection, and economy of metal when it is compared with structures of other types having equal strength and rigidity”.  He also commented that “its appearance is odd but not displeasing”.
 
-The Waddell A truss bridge design was popular for a short time in the early 20th century United States, but quickly fell out of fashion as the Pratt truss bridge design quickly became the norm, as it can span much greater distances.  Currently, there are only two surviving Waddell A truss bridges, one in Parkville, Missouri and one in Shreveport, Louisiana.  Both of these were relocated from their original build sites to these locations. 
+The Waddell A truss bridge design was popular for a short time in the early 20th century United States, but  fell out of fashion as the Pratt truss bridge design quickly became the norm, as it can span much greater distances.  Currently, there are only two surviving Waddell A truss bridges, one in Parkville, Missouri and one in Shreveport, Louisiana.  Both of these were relocated from their original build sites to these locations. 
 
 <center>
 ![Waddell A Truss Bridge in Parkville, Missouri](images/Waddell-bridge.jpeg)
@@ -33,17 +33,17 @@ The Waddell A truss bridge design was popular for a short time in the early 20th
 
 ### Trusses and Force Balance
 
-In structural engineering, the function of a truss is to hold up a load, which exerts a force on the truss. A load can be any force applied to the truss, such as a car going over a bridge or a porch swing hanging from the rafters above a porch. You can think of forces as vector quantities, which have a magnitude (length) and direction which can be defined in terms of positive and negative quantities of x and y. At its simplest, the force of a load is just its weight and acts only in the negative y, or downward, direction. 
+In structural engineering, the function of a truss is to hold up a load, which exerts a force on the truss. A load can be any force applied to the truss, such as a car going over a bridge or a porch swing hanging from the ceiling. You can think of forces as vector quantities, which have a magnitude (length) and direction which can be defined in terms of positive and negative quantities of x and y. At its simplest, the force of a load is just its weight and acts only in the negative y, or downward, direction. 
 
 <center>
 ![Waddell A Truss labeled with pins](images/image3.png){width=50%}
 </center>
 
-Traditionally, pins are noted by capital letters and members are named by the two pins at the ends. For example, the vertical member in the middle is GC because it has pin G at the top and pin C at the bottom. Additionally, it is very common to simplify trusses into two dimensions, x and y. Like in the Euclidean plane, the positive y direction is up and the positive x direction is to the right. For example, a person standing above pin C on the bridge might exert a ~ 600 N force in the y direction. Similarly, a bunch of helium balloons at the same point might exert a force of + 2 N in the y direction. 
+Traditionally, pins are noted by capital letters and members are named by the two pins at the ends. For example, the vertical member in the middle is CG because it has pin G at the top and pin C at the bottom. Additionally, it is very common to simplify trusses into two dimensions, x and y. Like in the Euclidean plane, the positive y direction is up and the positive x direction is to the right. For example, a person standing above pin C on the bridge might exert a -600 N force in the y direction. Similarly, a bunch of helium balloons at the same point might exert a force of +2 N in the y direction. 
 
-Since trusses are designed to hold up large loads on bridges or roofs, we don’t want them to move. Mathematically, that means all the forces acting on each member and pin need to balance each other out so that the net force on any member or pin is zero. This concept, called force balance, is  pretty intuitive when broken down. For example, say you and your friend are pushing the same table in opposite directions. If you are pushing as hard on the table as your friend is, the table will not move, but if you push harder than them, the table will move towards them. Here, we will be representing forces as vectors in which the magnitude is the force and the direction is the direction in which the force is acting. 
+Since trusses are designed to hold up large loads on bridges or roofs, we don’t want them to move. Mathematically, that means all the forces acting on each member and pin need to balance each other out so that the net force on any member or pin is zero. This concept, called force balance, is pretty intuitive when broken down. For example, say you and your friend are pushing the same table in opposite directions. If you are both pushing at the same magnitude, but in opposite directions, the table will not move. But if you push harder than them, the table will move towards them. Here, we will be representing forces as vectors in which the magnitude is the force and the direction is the direction in which the force is acting. 
 
-Using force balances, if we know the force acting on the truss we can figure out how much of that force is acting on each part of the truss.
+If we know the force acting on the truss we can figure out how much of that force is acting on each part of the truss using force balances.
 
 The way the members of a truss react to an applied load is best explained by something like the figure below. Imagine you have a straw held at an angle, and you pull one end left and the other right. The straw will turn until it’s parallel to the directions you’re pulling it.
 
@@ -75,70 +75,71 @@ One way we simplified our diagram is to assume that all members of the truss are
 
 
 Notice how in member CH, pin C and pin H both have Force CH pulling on them.   
-To find the force on each pin, we break it down into the total force in both the x and y directions. Think of this like breaking down each force into multiples of the basis vectors e1 and e2. The total force on each pin, in each direction, must equal to zero. 
 
-For example, the force of member AH pulls pin A both up and to the right, creating the force FAH. We call the upward part of the force the y-component and the rightward part of the force the x-component. We can use the geometry of the truss to help us find the exact amount of FAH acting along each direction. 
+To find the force on each pin, we break it down into the total force in both the x and y directions. Think of this like breaking down each force into multiples of the basis vectors $\vec{e_1}$ and $\vec{e_2}$. The total force on each pin, in each direction, must equal to zero. 
+
+For example, the force of member AH pulls pin A both up and to the right, creating the force $\vec{F_{AH}}$. We call the upward part of the force the y-component and the rightward part of the force the x-component. We can use the geometry of the truss to help us find the exact amount of $\vec{F_{AH}}$ acting along each direction. 
 
 
-To solve for each specific force on a pin, you can set up a system of linear equations.
+To solve for each specific force on a pin, you can set up a system of linear equations. Given that all the triangular sections of the truss are right-angled isosceles triangles, the diagonal angel is $45^\circ$. All diagonal components of the forces are either $sin(45^\circ)$ or $cos(45^\circ)$, which are both $\frac{\sqrt{2}}{2}$. 
 
 **Pin A:** 
 
-  $\Sigma F_{X} = F_{AB} + (F_{AH}\cdot cos(\theta)) = F_{AB} + (\frac{\sqrt{2}}{2}\cdot F_{AH}) = 0$
+  $\Sigma \vec{F_{X}} = \vec{F_{AB}} + (\vec{F_{AH}}\cdot cos(\theta)) = \vec{F_{AB}} + (\frac{\sqrt{2}}{2}\cdot \vec{F_{AH}}) = 0$
   
-  $\Sigma F_{Y} = 300 + (F_{AH}\cdot sin(\theta)) =  (\frac{\sqrt{2}}{2} \cdot F_{AH}) = -300$
+  $\Sigma \vec{F_{Y}} = 300 + (\vec{F_{AH}}\cdot sin(\theta)) =  (\frac{\sqrt{2}}{2} \cdot \vec{F_{AH}}) = -300$
 
 
 We repeat this process for every pin, which will result in two linear equations for each pin in the truss. The load and support forces, which are known, are the outputs of the linear equations for the pins on which they are acting. All other equations will equal zero. While we could solve them all by hand, that is a very time-consuming process. It is much easier to solve them using linear algebra. 
 
 **Pin B:** 
 
-  $\Sigma F_{X} = F_{BC} - F_{BH} = 0$
+  $\Sigma \vec{F_{X}} = \vec{F_{BC}} - \vec{F_{BH}} = 0$
   
-  $\Sigma F_{Y} = F_{BH} = 0$
+  $\Sigma \vec{F_{Y}} = \vec{F_{BH}} = 0$
 
 **Pin C:**
 
-  $\Sigma F_{X} = F_{CD} + (\frac{\sqrt{2}}{2} \cdot F_{CF}) - F_{BC} - (\frac{\sqrt{2}}{2} \cdot F_{CH}) = 0$
+  $\Sigma \vec{F_{X}} = \vec{F_{CD}} + (\frac{\sqrt{2}}{2} \cdot \vec{F_{CF}}) - \vec{F_{BC}} - (\frac{\sqrt{2}}{2} \cdot \vec{F_{CH}}) = 0$
   
-  $\Sigma F_{Y} = F_{CG} + (\frac{\sqrt{2}}{2} \cdot F_{CF}) = 600$
+  $\Sigma \vec{F_{Y}} = \vec{F_{CG}} + (\frac{\sqrt{2}}{2} \cdot \vec{F_{CF}}) = 600$
 
 **Pin D:**
 
-  $\Sigma F_{X} = F_{DE} - F_{CD} = 0$
+  $\Sigma \vec{F_{X}} = \vec{F_{DE}} - \vec{F_{CD}} = 0$
   
-  $\Sigma F_{Y} = F_{DF} = 0$
+  $\Sigma \vec{F_{Y}} = \vec{F_{DF}} = 0$
 
 **Pin E:**
 
-  $\Sigma F_{X} = - F_{DE} - (\frac{\sqrt{2}}{2} \cdot F_{EF}) = 0$
+  $\Sigma \vec{F_{X}} = - \vec{F_{DE}} - (\frac{\sqrt{2}}{2} \cdot \vec{F_{EF}}) = 0$
   
-  $\Sigma F_{Y} = 300 + (\frac{\sqrt{2}}{2} \cdot F_{EF}) = (\frac{\sqrt{2}}{2} \cdot F_{EF}) = -300$
+  $\Sigma \vec{F_{Y}} = 300 + (\frac{\sqrt{2}}{2} \cdot \vec{F_{EF}}) = (\frac{\sqrt{2}}{2} \cdot \vec{F_{EF}}) = -300$
 
 
 **Pin F:** 
 
-  $\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot F_{EF}) - (\frac{\sqrt{2}}{2} \cdot F_{FG}) - (\frac{\sqrt{2}}{2} \cdot F_{CF}) = 0$
+  $\Sigma \vec{F_{X}} = (\frac{\sqrt{2}}{2} \cdot \vec{F_{EF}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{FG}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{CF}}) = 0$
   
-  $\Sigma F_{Y} = (\frac{\sqrt{2}}{2} \cdot F_{FG}) - (\frac{\sqrt{2}}{2} \cdot F_{CF}) - (\frac{\sqrt{2}}{2} \cdot F_{EF}) - F_{DF} = 0$
+  $\Sigma \vec{F_{Y}} = (\frac{\sqrt{2}}{2} \cdot \vec{F_{FG}}) - (\frac{\sqrt{2}}{2} \cdot F_{CF}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{EF}}) - \vec{F_{DF}} = 0$
 
 **Pin G:** 
 
-  $\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot F_{FG}) - (\frac{\sqrt{2}}{2} \cdot F_{GH}) = 0$
+  $\Sigma \vec{F_{X}} = (\frac{\sqrt{2}}{2} \cdot \vec{F_{FG}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{GH}}) = 0$
   
-  $\Sigma F_{Y} = -(\frac{\sqrt{2}}{2} \cdot F_{GH}) -  (\frac{\sqrt{2}}{2} \cdot F_{FG}) - F_{CG} = 0$
+  $\Sigma \vec{F_{Y}} = -(\frac{\sqrt{2}}{2} \cdot \vec{F_{GH}}) -  (\frac{\sqrt{2}}{2} \cdot \vec{F_{FG}}) - \vec{F_{CG}} = 0$
 
 **Pin H:**
 
-  $\Sigma F_{X} = (\frac{\sqrt{2}}{2} \cdot F_{CH}) + (\frac{\sqrt{2}}{2} \cdot F_{GH}) - (\frac{\sqrt{2}}{2} \cdot F_{AH}) = 0$
+  $\Sigma \vec{F_{X}} = (\frac{\sqrt{2}}{2} \cdot \vec{F_{CH}}) + (\frac{\sqrt{2}}{2} \cdot \vec{F_{GH}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{AH}}) = 0$
 
-  $\Sigma F_{Y} = (\frac{\sqrt{2}}{2} \cdot F_{GH}) - (\frac{\sqrt{2}}{2} \cdot F_{CH}) - (\frac{\sqrt{2}}{2} \cdot F_{AH}) - F_{BH} = 0$
+  $\Sigma \vec{F_{Y}} = (\frac{\sqrt{2}}{2} \cdot \vec{F_{GH}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{CH}}) - (\frac{\sqrt{2}}{2} \cdot \vec{F_{AH}}) - \vec{F_{BH}} = 0$
 
 We can put all the force balance equations for the pin supports into an augmented matrix. 
 
 \[A = 
 \begin{array}{|ccccccccccccc|c|} 
-F_{AB} & F_{AH} & F_{BC} & F_{BH} & F_{CD} & F_{CF} & F_{CG} & F_{CH} & F_{DE} & F_{DF} & F_{EF} & F_{FG} & F_{GH} \\
+\vec{F_{AB}} & \vec{F_{AH}} & \vec{F_{BC}} & \vec{F_{BH}} & \vec{F_{CD}} & \vec{F_{CF}} & \vec{F_{CG}} & \vec{F_{CH}} & \vec{F_{DE}} & \vec{F_{DF}} & \vec{F_{EF}} & \vec{F_{FG}} & \vec{F_{GH}} \\
 1 & \frac{\sqrt{2}}{2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & \frac{\sqrt{2}}{2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -300 \\
 -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -165,7 +166,7 @@ The columns of the matrix correspond to each member of the truss and the rows al
 
 \[ RREF =
 \begin{array}{|ccccccccccccc|c|}
-F_{AB} & F_{AH} & F_{BC} & F_{BH} & F_{CD} & F_{CF} & F_{CG} & F_{CH} & F_{DE} & F_{DF} & F_{EF} & F_{FG} & F_{GH} \\
+\vec{F_{AB}} & \vec{F_{AH}} & \vec{F_{BC}} & \vec{F_{BH}} & \vec{F_{CD}} & \vec{F_{CF}} & \vec{F_{CG}} & \vec{F_{CH}} & \vec{F_{DE}} & \vec{F_{DF}} & \vec{F_{EF}} & \vec{F_{FG}} & \vec{F_{GH}} \\
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0& 300 \\
 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -424 \\
 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 300 \\
@@ -187,15 +188,16 @@ F_{AB} & F_{AH} & F_{BC} & F_{BH} & F_{CD} & F_{CF} & F_{CG} & F_{CH} & F_{DE} &
 
 
 
-Each column contains all zeros except for exactly one 1 along the main diagonal, called the pivot. The value on the right hand side of the pivot row is the value of the force. For example, FAB is the first column, which has a pivot in the first row. The value on the right hand side of the first row is 300. That is, $F_AB = 300$, so member AB is experiencing 300 N of tension. Similarly, $F_AH = -424$, meaning that member AH is experiencing 424 N of compression. The forces which are equal to 0, such as FDF, are what we call zero-force members. They don’t have any forces acting on them when the load is placed at point C. 
+Each column contains all zeros except for exactly one 1 along the main diagonal, called the pivot. The value on the right hand side of the pivot row is the value of the force. For example, $\vec{F_{AB}}$ is the first column, which has a pivot in the first row. The value on the right hand side of the first row is 300. That is, $\vec{F_{AB}} = 300$, so member AB is experiencing 300 N of tension. Similarly, $\vec{F_{AH}} = -424$, meaning that member AH is experiencing 424 N of compression. The forces which are equal to 0, such as $\vec{F_{DF}}$, are what we call zero-force members. They don’t have any forces acting on them when the load is placed at point C. 
 
 Notice how the bottom 3 rows of the RREF matrix are empty. That is because we had more equations than variables. We could have used 3 fewer equations and still gotten values for every force! 
 
+Now you know the forces acting on each member. This is important in engineering because we need to know the distribution of force on the truss as a whole and the maximum load (and what member that load is acting on). This will help in choosing materials of correct strength and size. 
 
 #### Sources
 
 1  Jackson, Donald C. "Waddell 'A' Truss Bridge" (PDF). Historic American Engineering Record. Washington, D.C.: Library of Congress. p. 1. Accessed November 30, 2022.
 https://tile.loc.gov/storage-services/master/pnp/habshaer/mo/mo0100/mo0162/data/mo0162data.pdf 
 
- 2         Powers, Mathew and Clio Admin. "Waddell "A" Truss Bridge in Parkville, Missouri." Clio: Your Guide to History. April 28, 2022.  Accessed November 30, 2022. https://theclio.com/entry/149629
+ 2  Powers, Mathew and Clio Admin. "Waddell "A" Truss Bridge in Parkville, Missouri." Clio: Your Guide to History. April 28, 2022.  Accessed November 30, 2022. https://theclio.com/entry/149629
 
